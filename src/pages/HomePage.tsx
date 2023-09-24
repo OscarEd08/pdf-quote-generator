@@ -20,7 +20,7 @@ const HomePage = () => {
     <>
       <MenuResponsive />
       <Routes>
-        <Route path="/cotizacion" element={<Form />} />
+        <Route path="/pdf-quote-generator" element={<Form />} />
         <Route
           path="/pdf"
           element={
