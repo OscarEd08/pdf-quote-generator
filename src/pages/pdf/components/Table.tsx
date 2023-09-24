@@ -5,8 +5,7 @@ import TableRow from "./TableRow";
 import TableFooter from "./TableFooter";
 
 const styles = StyleSheet.create({
-  table: {
-    display: "table",
+  table: {    
     width: "auto",
     borderStyle: "solid",
     borderWidth: 2,
