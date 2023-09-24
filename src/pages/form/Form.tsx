@@ -16,18 +16,19 @@ interface Item {
 
 const Form = () => {
   const { quote, setQuote } = useQuoteContext();
+  const [ruc, setRuc] = useState("");
   const [date, setDate] = useState("");
   const [desc, setDesc] = useState("");
   const [qty, setQty] = useState("");
   const [unitMeasure, setUnitMeasure] = useState("UND");
   const [unitPrice, setUnitPrice] = useState("");
 
-  // const handleRucChange = async (
-  //   event: React.ChangeEvent<HTMLInputElement>
-  // ) => {
-  //   const rucValue = event.target.value;
-  //   setQuote({ ...quote, ruc: rucValue });
-  // };
+  const handleRucChange = async (
+    event: React.ChangeEvent<HTMLInputElement>
+  ) => {
+    const rucValue = event.target.value;
+    setRuc(rucValue);
+  };
 
   const handleDateChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     const dateValue = event.target.value;
@@ -73,7 +74,7 @@ const Form = () => {
       unit_price: parseFloat(unitPrice),
     };
 
-    setQuote({ ...quote, quote_date: date, items: [...quote.items, newItem] });
+    setQuote({ ...quote, quote_date: date, ruc: ruc, items: [...quote.items, newItem] });
     localStorage.setItem(
       "quote",
       JSON.stringify({
@@ -122,7 +123,8 @@ const Form = () => {
               label="RUC"
               sx={{ mb: 3 }}
               fullWidth
-              // onChange={handleRucChange}
+              name="ruc"
+              onChange={handleRucChange}
             />
             <TextField
               type="date"
