@@ -28,9 +28,9 @@ const MenuResponsive = () => {
           <BottomNavigationAction
             label="Formulario"
             icon={<TextSnippetIcon />}
-            value="pdf-quote-generato"
+            value="pdf-quote-generator"
             onClick={() => {
-              navigate("/pdf-quote-generato");
+              navigate("/pdf-quote-generator/");
             }}
           />
           <BottomNavigationAction
