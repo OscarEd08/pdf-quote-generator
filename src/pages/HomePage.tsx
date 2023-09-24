@@ -20,7 +20,7 @@ const HomePage = () => {
     <>
       <MenuResponsive />
       <Routes>
-        <Route path="/" element={<Form />} />
+        <Route path="/cotizacion" element={<Form />} />
         <Route
           path="/pdf"
           element={
